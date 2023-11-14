@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+npm-error.log
+.git
+.gitignore
+docs
+tests
+*.md
+*.ts
+Dockerfile
+docker-compose.yml
+.dockerignore
+/tmp
+/cache
