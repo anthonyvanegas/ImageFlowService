@@ -5,8 +5,6 @@ npm-error.log
 .gitignore
 docs
 tests
-*.md
-*.ts
 Dockerfile
 docker-compose.yml
 .dockerignore
