@@ -17,11 +17,17 @@ cloudinary.config({
 router.post('/upload', upload.single('image'), async (req, res) => {
     try {
         const result = await cloudinary.uploader.upload(req.file.path);
-        console.log(result);
-        res.status(200).json({ url: result.secure_url });
+        res.status(200).json({
+            imageId: result.public_id,
+            width: result.widgth,
+            height: result.height,
+            format: result.format,
+            url: result.url,
+            created_at: result.created_at,
+            statusCode: 200
+        });
     } catch (error) {
-        console.error('Error uploading to Cloudinary:', error);
-        res.status(500).send('Error uploading image');
+        res.status(500).send({statusCode: 500});
     }
 });
 
@@ -30,10 +36,17 @@ router.get('/:imageId', async (req, res) => {
         const imageId = req.params.imageId;
         const imageData = await cloudinary.api.resource(imageId);
         const imageURL = await cloudinary.image(imageData.url, {transformation: [{fetch_format: "jpg"}]})
-        res.status(200).json(imageURL);
+        res.status(200).json({
+            imageId: imageData.public_id,
+            width: imageData.width,
+            height: imageData.height,
+            format: "jpg",
+            url: imageURL,
+            created_at: imageData.created_at,
+            statusCode: 200
+        });
     } catch (error) {
-        console.error('Error retrieving image:', error);
-        res.status(500).send('Error retrieving image');
+        res.status(500).send({statusCode: 500});
     }
 });
 
