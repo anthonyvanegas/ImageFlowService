@@ -25,14 +25,6 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     }
 });
 
-router.post('/convert', async (req, res) => {
-  
-});
-
-router.get('/status/:imageId', async (req, res) => {
-  
-});
-
 router.get('/:imageId', async (req, res) => {
     try {
         const imageId = req.params.imageId;
