@@ -1,6 +1,3 @@
-# ImageFlowService
-A microservice for image uploading and automatic format conversion, leveraging Google Cloud Storage for secure and scalable integration with web platforms.
-
 ## Overview
 ImageFlowService is a microservice designed for image uploads and conversions to jpg images. This microservice uses Cloudinary for image storage and manipulation. It is also containerized using Docker.
 
