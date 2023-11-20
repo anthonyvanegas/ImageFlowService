@@ -8,7 +8,7 @@ ImageFlowService is a microservice designed for image uploads and conversions to
 
 ## API Endpoints
 * UML Sequence Diagram:
-- https://drive.google.com/file/d/1IgFUPhAT4nOfyAL5pl8yyLILsEKaVnmQ/view?usp=sharing
+  - https://drive.google.com/file/d/1IgFUPhAT4nOfyAL5pl8yyLILsEKaVnmQ/view?usp=sharing
 * Upload Image
   - POST /api/images/upload
   - Example Call sending data through body-form-data:
