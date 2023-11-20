@@ -70,5 +70,7 @@ ImageFlowService is a microservice designed for image uploads and conversions to
 ## Deployment
 Deploy using Docker, Dockerfile included in repo.
 * Run the following inside the working directory:
- - docker build -t imageflowservice .
- - docker run -p 3000:3000 imageflowservice 
+```
+docker build -t imageflowservice .
+docker run -p 3000:3000 imageflowservice 
+```
