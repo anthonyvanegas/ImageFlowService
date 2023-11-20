@@ -5,13 +5,13 @@ const router = express.Router();
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({ 
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
-    api_key: process.env.CLOUDINARY_API_KEY, 
-    api_secret: process.env.CLOUDINARY_API_SECRET,
+    cloud_name: process.env.CLOUD_NAME, 
+    api_key: process.env.API_KEY, 
+    api_secret: process.env.API_SECRET,
     secure: true,
 });
 
-router.get('/health', async (req, res) => {
+router.get('/health', async (res) => {
     try {
         const imageData = await cloudinary.api.resource("sample");
         const imageURL = cloudinary.image(imageData.url);
