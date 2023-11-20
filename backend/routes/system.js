@@ -11,7 +11,7 @@ cloudinary.config({
     secure: true,
 });
 
-router.get('/health', async (res) => {
+router.get('/health', async (req, res) => {
     try {
         const imageData = await cloudinary.api.resource("sample");
         const imageURL = cloudinary.image(imageData.url);
